@@ -1,0 +1,34 @@
+<h1>Liste de etudiants</h1>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste de etudiants</div>
+        <div class="panel-body">
+            <span *ngFor="let f of listFormations._embedded.formations">
+              <button (click)="ongetetudiant(f)"
+               [ngClass]="f.id==currentformation.id?'btn btn-danger':'btn btn-primary'">{{f.nom}}</button>
+            </span>
+            <p></p>
+            <table class="table table-dark" *ngIf="listEtudiant">
+                <thead>
+                    <td>
+                        Nom
+                    </td>
+                    <td>
+                        Prenom
+                    </td>
+                    <td>
+                        date Naissance
+                    </td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let f of listEtudiant._embedded.etudiants">
+                        <td>{{f.nom}}</td>
+                        <td>{{f.prenom}}</td>
+                        <td>{{f.dateNaissance}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
